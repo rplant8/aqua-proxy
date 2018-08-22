@@ -81,8 +81,8 @@ class JobRegistry(object):
         log_text = ""
         if settings.DEBUG:
             log_text = "%s by %s %s" % (method, worker_name, params)
-        elif method=="eth_submitWork":
-            log_text = "eth_submitWork %s by %s" % (params[0], worker_name)
+        elif method=="aqua_submitWork":
+            log_text = "aqua_submitWork %s by %s" % (params[0], worker_name)
         if self.f.is_connected:
             if log_text:
                 log.info( "MAIN %s" % log_text )
