@@ -1,6 +1,6 @@
 #Description
 
-This is Stratum Proxy for Ethereum based pools (RPCv2) using asynchronous networking written in Python Twisted.
+This is Stratum Proxy for Aquachain based pools (RPCv2) using asynchronous networking written in Python Twisted.
 Originally developed for DwarfPool http://dwarfpool.com/eth
 
 **NOTE:** This fork is still in development. Some features may be broken. Please report any broken features or issues.
@@ -9,7 +9,7 @@ Originally developed for DwarfPool http://dwarfpool.com/eth
 #Features
 
 * Additional up to 20% increase of earning compared to standard pools
-* ETH stratum proxy
+* AQUA stratum proxy
 * Automatically failover via proxy
 * Only one connection to the pool
 * Workers get new jobs immediately
@@ -39,12 +39,12 @@ Originally developed for DwarfPool http://dwarfpool.com/eth
 
 #Configuration
 
-* all configs in file  eth-proxy.conf
+* all configs in file  aqua-proxy.conf
 
 
-#Command line to miner start, recommended farm-recheck to use with stratum-proxy is 200
+#Command line to miner start
 
-* ./ethminer --farm-recheck 200 -G -F http://127.0.0.1:8080/rig1
+* ./aquacppminer -F http://127.0.0.1:8080/rig1
 
 
 #External script to restart proxy (made by rain)
@@ -87,7 +87,7 @@ eth-proxy is built in python. I have been testing it with 2.7.3, but it should w
 
 * [Windows]
 Download compiled version
-https://github.com/Atrides/eth-proxy/releases
+https://github.com/rplant8/aqua-proxy/releases
 
 Or use python source code
 
@@ -112,9 +112,9 @@ File Twisted-15.4.0.win32-py2.7.msi (32bit) or Twisted-15.4.0.win-amd64-py2.7.ms
 pywin32-219.win32-py2.7.exe or pywin32-219.win-amd64-py2.7.exe
 http://sourceforge.net/projects/pywin32/files/pywin32/
 
-7) Download eth-proxy. Extract eth-proxy.zip. Change settings in config.py and start with command:
+7) Download aqua-proxy. Extract aqua-proxy.zip. Change settings in config.py and start with command:
 ```
-  python xmr-proxy.py
+  python aqua-proxy.py
 ```
 
 #Contact
