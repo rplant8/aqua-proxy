@@ -19,7 +19,7 @@ class Root(Resource):
         self.getWorkCacheTimeout = {"work":"","time":0}
 
     def json_response(self, msg_id, result):
-        resp = json.dumps({'id': msg_id, 'jsonrpc': '2.0', 'result': result})
+        resp = json.dumps({'id': msg_id, 'jsonrpc': '2.0', 'result': result}, separators=(',', ':'))
         return resp
 
     def json_error(self, msg_id, message):
