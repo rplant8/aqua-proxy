@@ -1,7 +1,7 @@
 #Description
 
 This is Stratum Proxy for Aquachain based pools (RPCv2) using asynchronous networking written in Python Twisted.
-Originally developed for DwarfPool http://dwarfpool.com/eth
+Works with https://aquapool.rplant.xyz
 
 **NOTE:** This fork is still in development. Some features may be broken. Please report any broken features or issues.
 
@@ -119,12 +119,13 @@ http://sourceforge.net/projects/pywin32/files/pywin32/
 
 #Contact
 
-* I am available via admin@dwarfpool.com
+* I am available via rplant@rplant.xyz
 
 #Credits
 
 * Original version by Slush0 (original stratum code)
 * More Features added by GeneralFault, Wadee Womersley and Moopless
+* Originally developed for DwarfPool http://dwarfpool.com/eth
 
 #License
 
