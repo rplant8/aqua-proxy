@@ -46,7 +46,7 @@ class Root(Resource):
                 if self.getWorkCacheTimeout["work"]!=self.job_registry.jobs.params[0]:
                     self.getWorkCacheTimeout = {"work":self.job_registry.jobs.params[0],"time":int(time.time())}
                 response = self.json_response(data.get('id', 0), self.job_registry.jobs.params)
-        elif data['method'] == 'eth_submitWork' or data['method'] == 'eth_submitHashrate':
+        elif data['method'] == 'aqua_submitWork' or data['method'] == 'aqua_submitHashrate':
             if self.isWorkerID:
                 worker_name = request.uri[1:15].split("/")[0]
                 if not worker_name:
@@ -55,12 +55,12 @@ class Root(Resource):
             else:
                 worker_name = ''
 
-            if data['method'] == 'eth_submitHashrate':
+            if data['method'] == 'aqua_submitHashrate':
                 if worker_name and (not self.submitHashrates.has_key(worker_name) or int(time.time())-self.submitHashrates[worker_name]>=60):
                     self.submitHashrates[worker_name] = int(time.time())
                     log.info('Hashrate for %s is %s MHs' % (worker_name,int(data['params'][0],16)/1000000.0 ) )
                     threads.deferToThread(self.job_registry.submit, data['method'], data['params'], worker_name)
-            elif data['method'] == 'eth_submitWork':
+            elif data['method'] == 'aqua_submitWork':
                 threads.deferToThread(self.job_registry.submit, data['method'], data['params'], worker_name)
             response = self.json_response(data.get('id', 0), True)
         else:
