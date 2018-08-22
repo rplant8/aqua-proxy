@@ -23,8 +23,9 @@ class JobRegistry(object):
         self.f3 = f3
         self.jobs = None
         # stop mining after 6 minutes if internet disconnected
-        if settings.COIN=="ETH":
-            self.coinTimeout = 360
+        #  WTF stop mining timeout until new block
+        if settings.COIN=="AQUA":
+            self.coinTimeout = 900
         else:
             self.coinTimeout = 900 # For expanse 15 minutes waiting for new job
         # Hook for LP broadcasts
