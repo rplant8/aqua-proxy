@@ -38,7 +38,7 @@ class Root(Resource):
 
         if not data.has_key('method'):
             response = self.json_error(data.get('id'), "Need methods")+'\n'
-        elif data['method'] == 'eth_getWork':
+        elif data['method'] == 'aqua_getWork':
             if self.getWorkCacheTimeout["work"]==self.job_registry.jobs.params[0] and int(time.time())-self.getWorkCacheTimeout["time"]>=self.job_registry.coinTimeout:
                 log.warning('Job timeout. Proxy is waiting for an updated job. Please restart proxy!')
                 response = self.json_error(data.get('id', 0), "Job timeout. Proxy is waiting for an updated job...")
